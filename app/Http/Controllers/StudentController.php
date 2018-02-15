@@ -75,8 +75,8 @@ class StudentController extends Controller
     public function update(Request $request, $id)
     {
         request()->validate([
-            'title' => 'required',
-            'body' => 'required',
+            'name' => 'required',
+            'phone' => 'required',
         ]);
         Student::find($id)->update($request->all());
         return redirect()->route('students.index')
