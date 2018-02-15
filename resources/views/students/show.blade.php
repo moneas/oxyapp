@@ -24,5 +24,17 @@
                 {{ $student->phone}}
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Entry Date:</strong>
+                {{ date('d-m-Y H:i', strtotime($student->created_at))}}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Update Date:</strong>
+                {{ date('d-m-Y H:i', strtotime($student->updated_at))}}
+            </div>
+        </div>
     </div>
 @endsection
