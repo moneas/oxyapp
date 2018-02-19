@@ -22,14 +22,16 @@
             <th>No</th>
             <th>Name</th>
             <th>Phone</th>
+            <th>Data Created</th>
             <th width="280px">Action</th>
         </tr>
     @if (count($students) > 0)
         @foreach ($students as $student)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $student->name}}</td>
-            <td>{{ $student->phone}}</td>
+            <td>{{ $student->name }}</td>
+            <td>{{ $student->phone }}</td>
+            <td>{{ show_date($student->created_at) }}</td>
             <td>
                 <a class="btn btn-info" href="{{ route('students.show',$student->id) }}">Show</a>
                 <a class="btn btn-primary" href="{{ route('students.edit',$student->id) }}">Edit</a>
